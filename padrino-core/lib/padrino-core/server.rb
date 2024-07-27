@@ -78,7 +78,7 @@ module Padrino
     def self.detect_rack_handler
       Handlers.each do |handler|
         
-          return handler if Rack::Handler.get(handler.to_s.downcase)
+          return handler if Rackup::Handler.get(handler.to_s.downcase)
         rescue LoadError
         rescue NameError
         
